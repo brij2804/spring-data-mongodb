@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.brijesh.mongodb</groupId>
-	<artifactId>customer-service</artifactId>
+	<artifactId>inventory-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>customer-service</name>
-	<description>Customer Microservice</description>
+	<name>inventory-service</name>
+	<description>Inventory microservice</description>
 	<properties>
 		<java.version>15</java.version>
 	</properties>
