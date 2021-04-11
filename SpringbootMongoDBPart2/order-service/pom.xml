@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.brijesh.mongodb</groupId>
-	<artifactId>springboot-mongodb-docker</artifactId>
+	<artifactId>order-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>springboot-mongodb-docker</name>
-	<description>Demo project for Spring Boot</description>
+	<name>order-service</name>
+	<description>Order microservice</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>

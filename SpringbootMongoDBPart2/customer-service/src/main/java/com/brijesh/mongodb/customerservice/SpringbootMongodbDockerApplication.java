@@ -1,4 +1,4 @@
-package com.brijesh.mongodb.springbootmongodbdocker;
+package com.brijesh.mongodb.customerservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
