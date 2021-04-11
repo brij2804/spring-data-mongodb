@@ -1,6 +1,21 @@
 version: '3.9'
 
 services:
+  customer-service:
+    image: brij2804/mongodb-customer-service:0.0.1-SNAPSHOT
+    mem_limit: 700m
+    ports:
+      - "8000:8000"
+    networks:
+      - project_network
+    depends_on:
+      - mongo
+    environment:
+      #EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://naming-server:8761/eureka
+      #SPRING.ZIPKIN.BASEURL: http://zipkin-server:9411/
+      #RABBIT_URI: amqp://guest:guest@rabbitmq:5672
+      #SPRING_RABBITMQ_HOST: rabbitmq
+
   mongo:
     image: mongo:4.4.5
     hostname: mongo
