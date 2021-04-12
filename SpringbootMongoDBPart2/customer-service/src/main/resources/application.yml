@@ -3,3 +3,8 @@ spring:
     name: customer-service
 server:
   port: 8000
+
+customer-service:
+  mongo-server-url: mongodb://localhost:27017
+  db-name: customerdb
+  collection-name: customer
