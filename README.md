@@ -91,7 +91,7 @@ springboot-starter 2.4.4 , java 15,mongo:4.4.5, spring-boot-starter-data-mongodb
 |check-MongoClient| http://localhost:8100/inventory-service/health-check/check-MongoClient |
 |showDatabases | http://localhost:8100/inventory-service/health-check/showDatabases |
 |check-InventoryDb | http://localhost:8100/inventory-service/health-check/check-InventoryDb |
-|create-InventoryDb | http://localhost:8100/inventory-service/health-check/create-InvetoryDb |
+|create-InventoryDb | http://localhost:8100/inventory-service/health-check/create-InventoryDb |
 |create-InventoryCollection|http://localhost:8100/inventory-service/health-check/create-InventoryCollection|
 
 -  POST json {
