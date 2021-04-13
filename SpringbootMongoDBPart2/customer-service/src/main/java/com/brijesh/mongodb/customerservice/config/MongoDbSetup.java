@@ -172,7 +172,6 @@ public class MongoDbSetup {
     public MongoAdmin mongoAdmin(MongoClient client){
         logger.info("mongoAdmin()");
         MongoAdmin mongoAdmin = null;
-
         if(client!=null){
             mongoAdmin=new MongoAdmin(client);
             logger.info("MongoAdmin created",mongoAdmin);
