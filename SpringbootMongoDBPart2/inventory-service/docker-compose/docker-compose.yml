@@ -10,15 +10,9 @@ services:
       - project_network
     depends_on:
       - mongo
-    environment:
-    #EUREKA.CLIENT.SERVICEURL.DEFAULTZONE: http://naming-server:8761/eureka
-    #SPRING.ZIPKIN.BASEURL: http://zipkin-server:9411/
-    #RABBIT_URI: amqp://guest:guest@rabbitmq:5672
-    #SPRING_RABBITMQ_HOST: rabbitmq
 
   mongo:
     image: mongo:4.4.5
-    hostname: mongo
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
@@ -27,12 +21,10 @@ services:
     ports:
       - "27017:27017"
     volumes:
-      - mongodb:/var/lib/mongodb
-   
+      - mongodb:/data/db
       
   mongo-express:
     image: mongo-express:0.54.0
-    hostname: mongo-express
     depends_on:
       - mongo
     ports:
@@ -43,12 +35,10 @@ services:
     networks:
       - project_network
     volumes:
-      - mongodb:/var/lib/mongodb    
+      - mongodb:/data/db
       
 networks:
-  default:
-    external:
-      name: project_network
+  project_network:
 
 volumes:
    mongodb:
