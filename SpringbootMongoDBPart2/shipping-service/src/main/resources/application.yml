@@ -4,3 +4,8 @@ spring:
 
 server:
   port: 8400
+
+shipping-service:
+  mongo-server-url: mongodb://127.0.0.1:27017
+  db-name: shippingdb
+  collection-name: shipping
