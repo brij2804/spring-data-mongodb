@@ -1,9 +1,58 @@
 version: '3.9'
 
-services:  
+services:
+  shipping-service:
+    image: brij2804/mongodb-shipping-service:0.0.1-SNAPSHOT
+    mem_limit: 700m
+    ports:
+      - "8400:8400"
+    networks:
+      - project_network
+    depends_on:
+      - mongo
+
+  pricing-service:
+    image: brij2804/mongodb-pricing-service:0.0.1-SNAPSHOT
+    mem_limit: 700m
+    ports:
+      - "8300:8300"
+    networks:
+      - project_network
+    depends_on:
+      - mongo
+
+  order-service:
+    image: brij2804/mongodb-order-service:0.0.1-SNAPSHOT
+    mem_limit: 700m
+    ports:
+      - "8200:8200"
+    networks:
+      - project_network
+    depends_on:
+      - mongo
+
+  customer-service:
+    image: brij2804/mongodb-customer-service:0.0.1-SNAPSHOT
+    mem_limit: 700m
+    ports:
+      - "8000:8000"
+    networks:
+      - project_network
+    depends_on:
+      - mongo
+
+  inventory-service:
+    image: brij2804/mongodb-inventory-service:0.0.1-SNAPSHOT
+    mem_limit: 700m
+    ports:
+      - "8100:8100"
+    networks:
+      - project_network
+    depends_on:
+      - mongo
+
   mongo:
     image: mongo:4.4.5
-    hostname: mongo
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
@@ -12,11 +61,10 @@ services:
     ports:
       - "27017:27017"
     volumes:
-      - mongodb:/var/lib/mongodb
+      - mongodb:/data/db
 
   mongo-express:
     image: mongo-express:0.54.0
-    hostname: mongo-express
     depends_on:
       - mongo
     ports:
@@ -27,12 +75,10 @@ services:
     networks:
       - project_network
     volumes:
-      - mongodb:/var/lib/mongodb    
+      - mongodb:/data/db
       
 networks:
-  default:
-    external:
-      name: project_network
+  project_network:
 
 volumes:
    mongodb:

@@ -10,6 +10,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.core.MongoAdmin;
+import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
 import java.util.Arrays;
@@ -38,7 +39,7 @@ public class MongoDbConfig {
              client=MongoClients.create(appConfig.getMongoServerUrl());
             logger.info("MongoClient client created from properties",client);
         }else{
-             client=MongoClients.create("mongodb://127.0.0.1:27017");
+             client=MongoClients.create("mongodb://root:example@localhost:27017");
             logger.info("MongoClient client created hardcoded",client);
         }
         return client;
@@ -49,4 +50,7 @@ public class MongoDbConfig {
         //MongoClient mongoClient = MongoClients.create("mongodb://localhost:27017,localhost:27018,localhost:27019");
     }
 
+    /*@Autowired
+    MongoTemplate mongoTemplate;
+*/
 }

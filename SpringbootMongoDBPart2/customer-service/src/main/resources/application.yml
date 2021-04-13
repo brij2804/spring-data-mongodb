@@ -1,11 +1,21 @@
 spring:
   application:
     name: customer-service
+  #mongodb:
+    #uri: mongodb://root:example@mongo:27017/customerdb
+  #data:
+    #mongodb:
+      #uri: mongodb://127.0.0.1:27017/customerdb
 
 server:
   port: 8000
 
 customer-service:
-  mongo-server-url: mongodb://127.0.0.1:27017
+  mongo-server-url: mongodb://root:example@127.0.0.1:27017
   db-name: customerdb
   collection-name: customer
+
+logging:
+  level:
+    org:
+      springframework: debug
