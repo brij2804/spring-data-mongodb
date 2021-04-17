@@ -1,6 +1,5 @@
 package com.brijesh.mongodb.customerservice.controller;
 
-import com.brijesh.mongodb.customerservice.config.MongoDbSetup;
 import com.brijesh.mongodb.customerservice.service.HealthCheckService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -38,27 +37,27 @@ public class HealthCheckController {
     }
 
     @GetMapping("/customer-service/health-check/check-CustomerDb")
-    public String checkCustomerDb(){
-        logger.info("checkCustomerDb()");
+    public String checkDatabase(){
+        logger.info("checkDatabase()");
         logger.info("path : "+"/customer-service/health-check/check-CustomerDb");
         String dbName="Not Database";
-        dbName= healthCheckService.getCustomerDB();
+        dbName= healthCheckService.getDatabase();
         logger.info("dbName :"+dbName);
         return dbName;
     }
 
     @GetMapping("/customer-service/health-check/create-CustomerDb")
-    public boolean createCustomerDb(){
-        logger.info("createCustomerDb()");
+    public boolean createDatabase(){
+        logger.info("createDatabase()");
         logger.info("path : "+"/customer-service/health-check/create-CustomerDb");
-        return healthCheckService.createCustomerDb();
+        return healthCheckService.createDatabase();
     }
 
     @GetMapping("/customer-service/health-check/create-CustomerCollection")
-    public void createCustomerCollection(){
-        logger.info("createCustomerCollection()");
+    public void createCollection(){
+        logger.info("createCollection()");
         logger.info("path : "+"/customer-service/health-check/create-CustomerCollection");
-        healthCheckService.createCustomerCollection();
+        healthCheckService.createCollection();
     }
 
 }

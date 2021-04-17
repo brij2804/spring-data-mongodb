@@ -51,6 +51,8 @@ springboot-starter 2.4.4 , java 15,mongo:4.4.5, spring-boot-starter-data-mongodb
 |POST (create single order) | http://localhost:8200/order-service/order |
 |PUT (edit single order)| http://localhost:8200/order-service/order/{id} |
 |DELETE(single order) | http://localhost:8200/order-service/order/{id} |
+|Swagger| URL |
+|swagger-api-docs| http://localhost:8080/v2/api-docs |
 |HealthCheck| URL |
 |check-MongoClient| http://localhost:8200/order-service/health-check/check-MongoClient |
 |showDatabases | http://localhost:8200/order-service/health-check/showDatabases |
@@ -73,6 +75,8 @@ springboot-starter 2.4.4 , java 15,mongo:4.4.5, spring-boot-starter-data-mongodb
 |POST (create single inventory) | http://localhost:8100/inventory-service/inventory |
 |PUT (edit single inventory)| http://localhost:8100/inventory-service/inventory/{id} |
 |DELETE(single inventory) | http://localhost:8100/inventory-service/inventory/{id} |
+|Swagger| URL |
+|swagger-api-docs| http://localhost:8080/v2/api-docs |
 |HealthCheck| URL |
 |check-MongoClient| http://localhost:8100/inventory-service/health-check/check-MongoClient |
 |showDatabases | http://localhost:8100/inventory-service/health-check/showDatabases |
@@ -95,6 +99,8 @@ springboot-starter 2.4.4 , java 15,mongo:4.4.5, spring-boot-starter-data-mongodb
 |POST (create single pricing) | http://localhost:8300/pricing-service/pricing |
 |PUT (edit single pricing)| http://localhost:8300/pricing-service/pricing/{id} |
 |DELETE(single pricing) | http://localhost:8300/pricing-service/pricing/{id} |
+|Swagger| URL |
+|swagger-api-docs| http://localhost:8080/v2/api-docs |
 |HealthCheck| URL |
 |check-MongoClient| http://localhost:8300/pricing-service/health-check/check-MongoClient |
 |showDatabases | http://localhost:8300/pricing-service/health-check/showDatabases |
@@ -117,6 +123,8 @@ springboot-starter 2.4.4 , java 15,mongo:4.4.5, spring-boot-starter-data-mongodb
 |POST (create single pricing) | http://localhost:8400/shipping-service/shipping |
 |PUT (edit single pricing)| http://localhost:8400/shipping-service/shipping/{id} |
 |DELETE(single pricing) | http://localhost:8400/shipping-service/shipping/{id} |
+|Swagger| URL |
+|swagger-api-docs| http://localhost:8080/v2/api-docs |
 |HealthCheck| URL |
 |check-MongoClient| http://localhost:8400/shipping-service/health-check/check-MongoClient |
 |showDatabases | http://localhost:8400/shipping-service/health-check/showDatabases |

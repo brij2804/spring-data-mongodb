@@ -26,8 +26,8 @@ public class HealthCheckService {
         return mongoDbSetup.checkMongoClientForUI();
     }
 
-    public String getCustomerDB(){
-        logger.info("getCustomerDB()");
+    public String getDatabase(){
+        logger.info("getDatabase()");
         MongoDatabase customerDb=mongoDbSetup.getDatabase(null);
         if(customerDb!=null){
             logger.info("customerDb.getName() : "+customerDb.getName());
@@ -36,13 +36,13 @@ public class HealthCheckService {
         return null;
     }
 
-    public boolean createCustomerDb(){
-        logger.info("createCustomerDb()");
-       return mongoDbSetup.createCustomerDb();
+    public boolean createDatabase(){
+        logger.info("createDatabase()");
+       return mongoDbSetup.createDatabase();
     }
 
-    public void createCustomerCollection(){
-        logger.info("createCustomerCollection()");
+    public void createCollection(){
+        logger.info("createCollection()");
         mongoDbSetup.createCollection();
     }
 }

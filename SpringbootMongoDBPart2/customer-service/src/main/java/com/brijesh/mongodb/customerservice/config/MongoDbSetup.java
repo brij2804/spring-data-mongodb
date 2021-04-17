@@ -1,7 +1,5 @@
 package com.brijesh.mongodb.customerservice.config;
 
-import ch.qos.logback.core.net.server.Client;
-import com.brijesh.mongodb.customerservice.entity.Customer;
 import com.mongodb.client.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -35,7 +33,7 @@ public class MongoDbSetup {
         if(checkMongoClient(client)){
             database =client.getDatabase(dbName);
             if(database==null){
-                if(createCustomerDb()){
+                if(createDatabase()){
                     logger.info("database created");
                     database =client.getDatabase(dbName);
                     logger.info("database : "+database.getName());
@@ -46,8 +44,8 @@ public class MongoDbSetup {
     }
 
     //create customer database
-    public boolean createCustomerDb(){
-        logger.info("createCustomerDb()");
+    public boolean createDatabase(){
+        logger.info("createDatabase()");
 
         MongoClient client=mongoDbConfig.mongoClient();
         //starting session
@@ -75,7 +73,7 @@ public class MongoDbSetup {
         logger.info("session closed");
         client.close();
         logger.info("client closed");
-        logger.info("createCustomerDb() flag"+created);
+        logger.info("createDatabase() flag"+created);
         return created;
     }
 
