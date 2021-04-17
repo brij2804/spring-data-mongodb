@@ -1,6 +1,7 @@
 version: '3.9'
 
 services:
+
   shipping-service:
     image: brij2804/mongodb-shipping-service:0.0.1-SNAPSHOT
     mem_limit: 700m
@@ -16,6 +17,8 @@ services:
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
+    command:
+      - --bind_ip_all
     networks:
       - project_network
     ports:
@@ -23,20 +26,6 @@ services:
     volumes:
       - mongodb:/data/db
 
-  mongo-express:
-    image: mongo-express:0.54.0
-    depends_on:
-      - mongo
-    ports:
-      - "8081:8081"
-    environment:
-      ME_CONFIG_MONGODB_ADMINUSERNAME: root
-      ME_CONFIG_MONGODB_ADMINPASSWORD: example
-    networks:
-      - project_network
-    volumes:
-      - mongodb:/data/db
-      
 networks:
   project_network:
 

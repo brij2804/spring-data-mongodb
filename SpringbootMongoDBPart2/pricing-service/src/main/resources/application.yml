@@ -6,6 +6,6 @@ server:
   port: 8300
 
 pricing-service:
-  mongo-server-url: mongodb://127.0.0.1:27017
+  mongo-server-url: mongodb://root:example@127.0.0.1:27017
   db-name: pricingdb
   collection-name: pricing
