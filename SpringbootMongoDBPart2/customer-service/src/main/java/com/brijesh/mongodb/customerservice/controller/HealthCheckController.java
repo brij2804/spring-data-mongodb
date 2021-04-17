@@ -5,6 +5,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -59,5 +60,13 @@ public class HealthCheckController {
         logger.info("path : "+"/customer-service/health-check/create-CustomerCollection");
         healthCheckService.createCollection();
     }
+
+    @PostMapping("/customer-service/health-check/create-IdCounter")
+    public void createIdCounter(){
+        logger.info("createIdCounter()");
+        logger.info("path : "+"/customer-service/health-check/create-IdCounter");
+        healthCheckService.createIdCounter();
+    }
+
 
 }
