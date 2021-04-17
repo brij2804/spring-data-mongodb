@@ -19,7 +19,7 @@ import java.util.Arrays;
 @EnableMongoRepositories(basePackages = "com.brijesh.mongodb.customerservice.repository")
 public class MongoDbConfig {
 
-    private Logger logger = LoggerFactory.getLogger(MongoDbConfig.class);
+    private final Logger logger = LoggerFactory.getLogger(MongoDbConfig.class);
 
    /* @Bean
     public MongoClient getMongoClient(){

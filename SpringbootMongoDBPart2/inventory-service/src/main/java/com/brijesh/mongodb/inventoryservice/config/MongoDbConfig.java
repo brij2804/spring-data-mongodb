@@ -27,7 +27,7 @@ public class MongoDbConfig {
              client=MongoClients.create(appConfig.getMongoServerUrl());
             logger.info("MongoClient client created from properties",client);
         }else{
-             client=MongoClients.create("mongodb://127.0.0.1:27017");
+             client=MongoClients.create("mongodb://root:example@127.0.0.1:27017");
             logger.info("MongoClient client created hardcoded",client);
         }
         return client;

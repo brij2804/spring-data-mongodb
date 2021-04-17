@@ -25,6 +25,8 @@ springboot-starter 2.4.4 , java 15,mongo:4.4.5, spring-boot-starter-data-mongodb
 |POST (create single customer) | http://localhost:8000/customer-service/customer |
 |PUT (edit single customer)| http://localhost:8000/customer-service/customer/{id} |
 |DELETE(single customer) | http://localhost:8000/customer-service/customer/{id} |
+|Swagger| URL |
+|swagger-api-docs| http://localhost:8080/v2/api-docs |
 |HealthCheck| URL |
 |check-MongoClient| http://localhost:8000/customer-service/health-check/check-MongoClient |
 |showDatabases | http://localhost:8000/customer-service/health-check/showDatabases |
