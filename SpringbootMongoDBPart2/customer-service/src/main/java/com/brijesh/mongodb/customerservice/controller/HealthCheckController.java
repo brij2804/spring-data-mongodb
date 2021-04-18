@@ -61,6 +61,13 @@ public class HealthCheckController {
         healthCheckService.createCollection();
     }
 
+    @GetMapping("/customer-service/health-check/get-CustomerCollection")
+    public void getCollection(){
+        logger.info("getCollection()");
+        logger.info("path : "+"/customer-service/health-check/get-CustomerCollection");
+        healthCheckService.getCollection();
+    }
+
     @PostMapping("/customer-service/health-check/create-IdCounter")
     public void createIdCounter(){
         logger.info("createIdCounter()");

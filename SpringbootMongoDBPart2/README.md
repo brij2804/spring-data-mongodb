@@ -22,6 +22,7 @@ springboot-starter 2.4.4 , java 15,mongo:4.4.5, spring-boot-starter-data-mongodb
 |Method | URL|
 | :--------------|:-------------|
 |GET(single customer)| http://localhost:8000/customer-service/customer/{id} |
+|GET(List of customer)| http://localhost:8000/customer-service/customer |
 |POST (create single customer) | http://localhost:8000/customer-service/customer |
 |PUT (edit single customer)| http://localhost:8000/customer-service/customer/{id} |
 |DELETE(single customer) | http://localhost:8000/customer-service/customer/{id} |
@@ -33,7 +34,12 @@ springboot-starter 2.4.4 , java 15,mongo:4.4.5, spring-boot-starter-data-mongodb
 |check-CustomerDb | http://localhost:8000/customer-service/health-check/check-CustomerDb |
 |create-CustomerDb | http://localhost:8000/customer-service/health-check/create-CustomerDb |
 |create-CustomerCollection|http://localhost:8000/customer-service/health-check/create-CustomerCollection|
+|get-CustomerCollection|http://localhost:8000/customer-service/health-check/get-CustomerCollection|
 
+- GET json {
+  "firstName":"John",
+  "lastName":"Mason",
+}
 -  POST json {
     "firstName":"John",
     "lastName":"Mason",

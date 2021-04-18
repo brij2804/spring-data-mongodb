@@ -11,6 +11,7 @@ import java.util.List;
 
 @RestController
 public class CustomerController {
+
     private Logger logger = LoggerFactory.getLogger(CustomerController.class);
 
     @Autowired
@@ -18,11 +19,15 @@ public class CustomerController {
 
     @GetMapping("/customer-service/customer/{id}")
     public Customer getCustomerbyId(@PathVariable String id){
+        logger.info("getCustomerbyId()");
+        logger.info("path : "+"/customer-service/customer/{id}");
         return customerService.getCustomerById(id);
     }
 
     @PostMapping("/customer-service/customer")
     public List<Customer> createCustomer(@RequestBody Customer customer){
+        logger.info("createCustomer()");
+        logger.info("path : "+"/customer-service/customer");
        return customerService.createCustomer(customer);
     }
 
@@ -31,6 +36,13 @@ public class CustomerController {
         logger.info("getIdFromCounter()");
         logger.info("path : "+"/customer-service/customer/getIdFromCounter");
         return customerService.getIdFromCounter();
+    }
+
+    @GetMapping("/customer-service/customer")
+    public List<Customer> getCustomers(@RequestBody Customer customer){
+        logger.info("getCustomers()");
+        logger.info("path : "+"/customer-service/customer");
+        return customerService.getCustomers(customer);
     }
 
 }

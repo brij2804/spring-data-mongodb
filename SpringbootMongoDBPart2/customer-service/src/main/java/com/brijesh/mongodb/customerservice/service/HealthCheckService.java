@@ -46,6 +46,11 @@ public class HealthCheckService {
         mongoDbSetup.createCollection();
     }
 
+    public void getCollection(){
+        logger.info("createCollection()");
+        mongoDbSetup.getCollection();
+    }
+
     public void createIdCounter() {
         logger.info("createIdCounter()");
     }

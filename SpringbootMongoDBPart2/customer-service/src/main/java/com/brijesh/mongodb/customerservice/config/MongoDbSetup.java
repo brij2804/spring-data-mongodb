@@ -79,6 +79,7 @@ public class MongoDbSetup {
 
     //check if the customer collection created
     public MongoCollection getCollection(){
+        logger.info("createCollection");
         MongoClient client=mongoDbConfig.mongoClient();
         MongoDatabase database=getDatabase(client);
         MongoCollection collection = null;
@@ -101,12 +102,8 @@ public class MongoDbSetup {
 
         ClientSession session =client.startSession();
         logger.info("session started");
-
-
         database.createCollection(session,collectionName);
         logger.info("collection created");
-
-
         session.close();
         logger.info("session closed");
         client.close();
