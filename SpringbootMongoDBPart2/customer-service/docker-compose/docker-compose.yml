@@ -2,26 +2,34 @@ version: '3.9'
 
 services:
 
-  customer-service:
-    image: brij2804/mongodb-customer-service:0.0.1-SNAPSHOT
-    mem_limit: 700m
-    ports:
-      - "8000:8000"
-    networks:
-      - project_network
-    depends_on:
-      - mongo
+  #customer-service:
+    #image: brij2804/mongodb-customer-service:0.0.1-SNAPSHOT
+    #mem_limit: 700m
+    #ports:
+      #- "8000:8000"
+    #networks:
+      #- project_network
+    #depends_on:
+      #- mongo
     #environment:
       #MONGODB_URI: mongodb://mongo:27017
 
-  mongo:
+  mongodb:
     image: mongo:4.4.5
-    hostname: mongodbsvr
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: example  
+    container_name: mongodb
+    hostname: mongodb
+    #environment:
+      #MONGO_INITDB_ROOT_USERNAME: root
+      #MONGO_INITDB_ROOT_PASSWORD: password
+      #MONGODB_ROOT_PASSWORD: password
+      #authenticationDatabase: admin
+      #MONGO_INITDB_DATABASE: admin
+      #MONGODB_DATABASE: customerdb
+      #MONGODB_USER: customerdbuser
+      #MONGODB_PASS: password
     command:
       - --bind_ip_all
+      #- --authenticationDatabase admin
     networks:
       - project_network
     ports:

@@ -11,11 +11,11 @@ server:
   port: 8000
 
 customer-service:
-  mongo-server-url: mongodb://root:example@127.0.0.1:27017
+  mongo-server-url: mongodb://customerdbuser:password@127.0.0.1:27017/admin
   db-name: customerdb
   collection-name: customer
 
-logging:
-  level:
-    org:
-      springframework: debug
+#logging:
+  #level:
+   # org:
+      #springframework: debug

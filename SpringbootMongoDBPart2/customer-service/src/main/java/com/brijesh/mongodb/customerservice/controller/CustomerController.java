@@ -38,10 +38,12 @@ public class CustomerController {
         return customerService.getIdFromCounter();
     }
 
-    @GetMapping("/customer-service/customer")
+    @GetMapping(path = "/customer-service/customer",consumes = "application/json",produces = "application/json")
     public List<Customer> getCustomers(@RequestBody Customer customer){
         logger.info("getCustomers()");
         logger.info("path : "+"/customer-service/customer");
+        logger.info("first name : "+customer.getFirstName());
+        logger.info("last name : "+customer.getLastName());
         return customerService.getCustomers(customer);
     }
 

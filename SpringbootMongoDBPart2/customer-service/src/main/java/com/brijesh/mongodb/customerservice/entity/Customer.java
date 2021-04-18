@@ -9,14 +9,15 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Customer {
 
     @Id
-    private Integer customerId;
+    private String id;
+
     private String firstName;
     private  String lastName;
 
     @Override
     public String toString() {
         return "Customer{" +
-                "customerId=" + customerId +
+                "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 '}';

@@ -1,5 +1,6 @@
 package com.brijesh.mongodb.customerservice.config;
 
+import com.mongodb.MongoCredential;
 import com.mongodb.ServerAddress;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
@@ -39,7 +40,7 @@ public class MongoDbConfig {
              client=MongoClients.create(appConfig.getMongoServerUrl());
             logger.info("MongoClient client created from properties",client);
         }else{
-             client=MongoClients.create("mongodb://root:example@localhost:27017");
+             client=MongoClients.create("mongodb://customerdbuser:password@localhost:27017/admin");
             logger.info("MongoClient client created hardcoded",client);
         }
         return client;

@@ -10,9 +10,9 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface CustomerRepository extends MongoRepository<Customer,Integer> {
+public interface CustomerRepository extends MongoRepository<Customer,String> {
 
-    public Customer findById(String id);
+    //public Customer findById(String id);
 
     @Query(value =  "{ 'firstName' : ?0}")
     public List<Customer> findByFirstName(String firstName);

@@ -25,7 +25,7 @@ public class CustomerService {
 
     public Customer getCustomerById(String id){
         logger.info("getCustomerById()");
-        return customerRepository.findById(id);
+        return null;//customerRepository.findById(id);
     }
 
     public List<Customer> createCustomer(Customer customer){
@@ -63,15 +63,15 @@ public class CustomerService {
 
     public List<Customer> getCustomers(Customer customer){
         logger.info("getCustomers()");
-       if(!customer.getFirstName().isEmpty() && customer.getLastName().isEmpty()){
+       if(customer.getFirstName()!=null && customer.getLastName()==null){
            logger.info("getAllByFirstName()");
            return getAllByFirstName(customer.getFirstName());
        }
-       if(!customer.getLastName().isEmpty() && customer.getFirstName().isEmpty()){
+       if(customer.getLastName()!=null && customer.getFirstName()==null){
            logger.info("getAllByLastName()");
            return getAllByLastName(customer.getLastName());
        }
-       if(!customer.getFirstName().isEmpty() && !customer.getLastName().isEmpty()){
+       if(customer.getFirstName()!=null && customer.getLastName()!=null){
            logger.info("getAllByFirstAndLastName()");
            return getAllByFirstAndLastName(customer.getFirstName(),customer.getLastName());
        }
